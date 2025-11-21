@@ -1,0 +1,82 @@
+/* خلفية متحركة بألوان علم الجزائر */
+.home-container {
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #006233, #ffffff, #d80c0c, #006233);
+  background-size: 400% 400%;
+  animation: algeriaBG 10s ease infinite;
+  padding-bottom: 50px;
+}
+
+@keyframes algeriaBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* العنوان الرئيسي */
+.hero {
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.title {
+  font-size: 50px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 15px #00eaff;
+}
+
+.subtitle {
+  margin-top: 10px;
+  font-size: 20px;
+  color: #e0e0e0;
+  text-shadow: 0 0 10px #00a6ff;
+}
+
+/* زر زجاجي رئيسي */
+.hero-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 35px;
+  font-size: 20px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.13);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.4);
+  text-decoration: none;
+  box-shadow: 0 0 20px rgba(0, 140, 255, 0.8);
+  transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+  box-shadow: 0 0 30px rgba(0, 180, 255, 1);
+  transform: translateY(-3px);
+}
+
+/* قسم المنتجات */
+.product-section {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 0 0 10px #00eaff;
+}
+
+/* Grid المنتجات */
+.product-grid {
+  display: grid;
+  gap: 20px;
+  padding: 0 20px;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+}
+
+/* Loader */
+.loading {
+  color: #fff;
+  font-size: 18px;
+}
