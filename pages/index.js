@@ -1,47 +1,26 @@
-import { useEffect, useState } from "react";
-import ProductCard from "../components/ProductCard";
-import FloatingButton from "../components/FloatingButton";
+import Link from "next/link";
+import products from "../products.json";
 import "../styles/home.css";
 
 export default function Home() {
-  const [products, setProducts] = useState([]);
-
-  // تحميل البيانات من ملف JSON
-  useEffect(() => {
-    fetch("/data/products.json")
-      .then((res) => res.json())
-      .then((data) => setProducts(data.products))
-      .catch(() => console.log("Error loading products"));
-  }, []);
-
   return (
-    <div className="home-container">
-      <div className="hero">
-        <h1 className="title">MisterAI Marketplace</h1>
-        <p className="subtitle">بيع وشراء — نشر مجاني عبر التلغرام</p>
+    <div className="matrix-bg">
+      <h1 className="title">MisterAI Marketplace 2025</h1>
 
-        <a
-          href="https://t.me/YOUR_TELEGRAM_USERNAME"
-          target="_blank"
-          className="hero-btn"
-        >
-          أرسل معلومات منتجك للنشر مجاناً
-        </a>
+      <div className="product-grid">
+        {products.map((p) => (
+          <div key={p.id} className="product-card">
+            <img src={p.image} alt={p.title} className="product-img" />
+
+            <h2>{p.title}</h2>
+            <p className="price">{p.price}</p>
+
+            <Link href={`/product/${p.id}`}>
+              <button className="glass-btn">التفاصيل</button>
+            </Link>
+          </div>
+        ))}
       </div>
-
-      <div className="product-section">
-        <h2 className="section-title">المنتجات الجديدة</h2>
-
-        <div className="product-grid">
-          {products.length > 0 ? (
-            products.map((p, i) => <ProductCard key={i} product={p} />)
-          ) : (
-            <p className="loading">جاري تحميل المنتجات...</p>
-          )}
-        </div>
-      </div>
-
-      <FloatingButton />
     </div>
   );
 }
