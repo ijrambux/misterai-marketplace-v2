@@ -1,33 +1,54 @@
-import { useRouter } from "next/router";
 import products from "../../products.json";
-import "../../styles/home.css";
 
-export default function ProductPage() {
-  const router = useRouter();
-  const { id } = router.query;
-
-  const product = products.find((p) => p.id == id);
-
-  if (!product) return <h1>Produit non trouvé</h1>;
-
-  const sendRequest = async () => {
-    await fetch("/api/sendToTelegram", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(product)
-    });
-    alert("تم إرسال طلب المنتج! سنتواصل معك عبر تيليغرام.");
-  };
+export default function ProductPage({ product }) {
+  if (!product) return <h1>المنتج غير موجود</h1>;
 
   return (
-    <div className="product-page">
-      <img src={product.image} className="product-big" />
-      <h1>{product.name}</h1>
-      <p className="price">{product.price} دج</p>
+    <div style={{ padding: "40px", fontFamily: "Arial, sans-serif" }}>
+      <h1 style={{ fontSize: "36px", fontWeight: "bold" }}>{product.name}</h1>
 
-      <button className="btn" onClick={sendRequest}>
-        طلب هذا المنتج
-      </button>
+      <img
+        src={product.image}
+        alt={product.name}
+        style={{
+          width: "350px",
+          marginTop: "20px",
+          borderRadius: "14px",
+          boxShadow: "0 4px 15px rgba(0,0,0,0.15)",
+        }}
+      />
+
+      <p style={{ marginTop: "25px", fontSize: "18px", color: "#444" }}>
+        {product.description}
+      </p>
+
+      <h2 style={{ marginTop: "20px", fontSize: "26px", fontWeight: "600" }}>
+        السعر: {product.price} دج
+      </h2>
+
+      <a
+        href="https://t.me/misteraidz_bot"
+        style={{
+          marginTop: "30px",
+          display: "inline-block",
+          padding: "12px 25px",
+          background: "green",
+          color: "white",
+          borderRadius: "8px",
+          textDecoration: "none",
+          fontSize: "18px",
+        }}
+      >
+        شراء الآن
+      </a>
     </div>
   );
+}
+
+export async function getServerSideProps({ params }) {
+  const product = products.find((p) => p.id == params.id) || null;
+
+  return {
+    props: { product },
+  };
 }
