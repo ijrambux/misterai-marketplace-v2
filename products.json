@@ -1,14 +1,16 @@
-[
-  {
-    "id": 1,
-    "name": "Xiaomi Redmi 12",
-    "price": "29900",
-    "image": "/products/xiaomi-redmi-12-1.webp"
+{
+  "name": "misterai-marketplace",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-  {
-    "id": 2,
-    "name": "T900 Ultra Smartwatch",
-    "price": "4500",
-    "image": "/products/fichier-standard-copie10-1.jpg"
+  "dependencies": {
+    "next": "14.1.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   }
-]
+}
+
