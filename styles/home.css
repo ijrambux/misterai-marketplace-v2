@@ -1,38 +1,41 @@
-.matrix-bg {
-  background: url("https://i.imgur.com/7zE8jUq.gif");
-  background-size: cover;
-  min-height: 100vh;
-  padding: 40px;
+body {
+  margin: 0;
+  padding: 0;
+  background: #0e0e0e;
+  font-family: "Tahoma", sans-serif;
+  color: white;
+}
+
+.container {
+  padding: 30px;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .title {
-  text-align: center;
-  font-size: 42px;
-  font-weight: bold;
-  color: #00ff7f;
-  text-shadow: 0 0 20px #00ff7f;
+  font-size: 32px;
+  margin-bottom: 30px;
 }
 
-.product-grid {
+.grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 25px;
-  padding: 20px;
 }
 
-.product-card {
-  background: rgba(0, 255, 150, 0.07);
-  backdrop-filter: blur(7px);
-  border: 1px solid #00ff7f;
+.card {
+  background: #181818;
   padding: 15px;
-  border-radius: 12px;
-  text-align: center;
-  transition: 0.3s;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  transition: 0.2s;
+  border: 1px solid #222;
 }
 
-.product-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px #00ff7f;
+.card:hover {
+  border-color: #0af;
+  box-shadow: 0 0 15px #0af7;
 }
 
 .product-img {
@@ -41,55 +44,33 @@
 }
 
 .price {
-  font-size: 20px;
-  color: #00ff7f;
-}
-
-.glass-btn {
-  padding: 10px 25px;
-  background: rgba(0, 255, 150, 0.1);
-  border: 1px solid #00ff7f;
-  border-radius: 8px;
-  color: #00ff7f;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.glass-btn:hover {
-  background: #00ff7f;
-  color: black;
+  margin-top: 5px;
+  color: #0af;
 }
 
 .product-page {
+  padding: 40px;
   text-align: center;
 }
 
-.big-img {
-  width: 60%;
+.product-big {
+  width: 350px;
   border-radius: 12px;
   margin-bottom: 20px;
-  box-shadow: 0 0 20px #00ff7f;
 }
 
-.back-btn {
-  margin-bottom: 25px;
-  padding: 10px 20px;
-  background: black;
-  border: 1px solid #00ff7f;
-  color: #00ff7f;
+.btn {
+  padding: 12px 25px;
+  font-size: 18px;
+  background: #0af;
+  border: none;
   border-radius: 8px;
   cursor: pointer;
+  color: white;
+  transition: 0.2s;
 }
 
-.desc {
-  width: 70%;
-  margin: auto;
-  font-size: 18px;
+.btn:hover {
+  background: #0088dd;
 }
 
-.contact-box {
-  margin-top: 25px;
-  padding: 20px;
-  border: 1px solid #00ff7f;
-  border-radius: 10px;
-}
