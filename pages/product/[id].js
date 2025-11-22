@@ -1,58 +1,32 @@
 import { useRouter } from "next/router";
-import productsData from "../../products.json";
+import products from "../../products.json";
+import "../../styles/home.css";
 
 export default function ProductPage() {
   const router = useRouter();
   const { id } = router.query;
 
-  const product = productsData.products.find((item) => item.id === id);
+  const product = products.find((p) => p.id == id);
 
-  if (!product) {
-    return <h1 style={{ textAlign: "center", marginTop: "50px" }}>المنتج غير موجود</h1>;
-  }
+  if (!product) return <h1>Produit non trouvé</h1>;
 
-  const handleContact = async () => {
+  const sendRequest = async () => {
     await fetch("/api/sendToTelegram", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        text: `🚨 تطوير جديد  
-المنتج: ${product.title}  
-السعر: ${product.price}  
-الشاري يريد التواصل.`
-      })
+      body: JSON.stringify(product)
     });
-    alert("تم إرسال طلبك بنجاح، سيتواصل معك صاحب المتجر.");
+    alert("تم إرسال طلب المنتج! سنتواصل معك عبر تيليغرام.");
   };
 
   return (
-    <div style={{ maxWidth: "600px", margin: "auto", padding: "20px" }}>
-      <img
-        src={product.image}
-        alt={product.title}
-        style={{ width: "100%", borderRadius: "10px" }}
-      />
+    <div className="product-page">
+      <img src={product.image} className="product-big" />
+      <h1>{product.name}</h1>
+      <p className="price">{product.price} دج</p>
 
-      <h1 style={{ marginTop: "20px" }}>{product.title}</h1>
-
-      <p style={{ fontSize: "20px", color: "green" }}>{product.price}</p>
-
-      <p style={{ marginTop: "10px" }}>{product.description}</p>
-
-      <button
-        onClick={handleContact}
-        style={{
-          padding: "12px 20px",
-          marginTop: "20px",
-          background: "#0088cc",
-          color: "white",
-          border: "none",
-          borderRadius: "8px",
-          cursor: "pointer",
-          width: "100%"
-        }}
-      >
-        تواصل مع البائع
+      <button className="btn" onClick={sendRequest}>
+        طلب هذا المنتج
       </button>
     </div>
   );
