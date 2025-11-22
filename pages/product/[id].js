@@ -1,54 +1,29 @@
+import { useRouter } from "next/router";
 import products from "../../products.json";
+import "../../styles/home.css";
 
-export default function ProductPage({ product }) {
-  if (!product) return <h1>المنتج غير موجود</h1>;
+export default function ProductPage() {
+  const router = useRouter();
+  const { id } = router.query;
+
+  const product = products.find((p) => p.id == id);
+
+  if (!product)
+    return <h1 className="notfound">المنتج غير موجود</h1>;
 
   return (
-    <div style={{ padding: "40px", fontFamily: "Arial, sans-serif" }}>
-      <h1 style={{ fontSize: "36px", fontWeight: "bold" }}>{product.name}</h1>
+    <div className="background">
+      <div className="card product-card">
+        <img src={product.image} className="product-img" />
 
-      <img
-        src={product.image}
-        alt={product.name}
-        style={{
-          width: "350px",
-          marginTop: "20px",
-          borderRadius: "14px",
-          boxShadow: "0 4px 15px rgba(0,0,0,0.15)",
-        }}
-      />
+        <h1>{product.title}</h1>
 
-      <p style={{ marginTop: "25px", fontSize: "18px", color: "#444" }}>
-        {product.description}
-      </p>
+        <p className="desc">{product.fullDesc}</p>
 
-      <h2 style={{ marginTop: "20px", fontSize: "26px", fontWeight: "600" }}>
-        السعر: {product.price} دج
-      </h2>
-
-      <a
-        href="https://t.me/misteraidz_bot"
-        style={{
-          marginTop: "30px",
-          display: "inline-block",
-          padding: "12px 25px",
-          background: "green",
-          color: "white",
-          borderRadius: "8px",
-          textDecoration: "none",
-          fontSize: "18px",
-        }}
-      >
-        شراء الآن
-      </a>
+        <a href={product.contact} className="btn">
+          تواصل مع المعلن
+        </a>
+      </div>
     </div>
   );
-}
-
-export async function getServerSideProps({ params }) {
-  const product = products.find((p) => p.id == params.id) || null;
-
-  return {
-    props: { product },
-  };
 }
