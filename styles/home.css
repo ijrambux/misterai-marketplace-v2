@@ -1,83 +1,34 @@
-/* خلفية متحركة بألوان الجزائر */
-.background {
-  min-height: 100vh;
-  padding: 40px;
-  background: linear-gradient(120deg, #006233, #ffffff, #d21034);
-  background-size: 300% 300%;
-  animation: moveBg 12s ease infinite;
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  color: white;
 }
 
-@keyframes moveBg {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* عنوان */
 .title {
-  text-align: center;
-  color: white;
-  font-size: 38px;
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 0 0 18px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+  font-size: 22px;
   margin-bottom: 40px;
-  font-weight: bold;
+  opacity: 0.9;
 }
 
-/* كروت المنتجات */
-.products {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 25px;
-}
-
-.card {
-  width: 350px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  text-align: center;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: scale(1.05);
-}
-
-.product-img {
-  width: 100%;
-  border-radius: 15px;
-}
-
-/* زر زجاجي */
-.btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background: rgba(255,255,255,0.4);
-  border-radius: 12px;
-  color: black;
-  font-weight: bold;
-  text-decoration: none;
-  backdrop-filter: blur(8px);
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: rgba(255,255,255,0.7);
-}
-
-/* صفحة المنتج */
-.product-card {
-  width: 60%;
-  margin: auto;
-}
-
-/* منتج غير موجود */
-.notfound {
-  text-align: center;
+.glass-btn {
+  padding: 14px 32px;
+  font-size: 20px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.3);
   color: white;
-  margin-top: 100px;
-  font-size: 40px;
+  transition: 0.3s;
+}
+
+.glass-btn:hover {
+  background: rgba(255,255,255,0.35);
+  transform: scale(1.05);
 }
