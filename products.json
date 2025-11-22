@@ -1,28 +1,14 @@
-{
-  "products": [
-    {
-      "id": "redmi-12",
-      "title": "Xiaomi Redmi 12",
-      "price": "22000 DA",
-      "image": "/products/xiaomi-redmi-12-1.webp",
-      "description": "هاتف شاومي ريدمي 12، شاشة كبيرة وبطارية قوية، مناسب للاستعمال اليومي.",
-      "seller": {
-        "name": "مصطفى",
-        "phone": "06XXXXXXXX",
-        "telegram": "@misteraidz_bot"
-      }
-    },
-    {
-      "id": "t900-watch",
-      "title": "Smart Watch T900",
-      "price": "6000 DA",
-      "image": "/products/fichier-standard-copie10-1.jpg",
-      "description": "ساعة ذكية T900، مكالمات، إشعارات، وخطواتك كاملة مراقَبة.",
-      "seller": {
-        "name": "مصطفى",
-        "phone": "06XXXXXXXX",
-        "telegram": "@misteraidz_bot"
-      }
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "name": "Xiaomi Redmi 12",
+    "price": "29900",
+    "image": "/products/xiaomi-redmi-12-1.webp"
+  },
+  {
+    "id": 2,
+    "name": "T900 Ultra Smartwatch",
+    "price": "4500",
+    "image": "/products/fichier-standard-copie10-1.jpg"
+  }
+]
