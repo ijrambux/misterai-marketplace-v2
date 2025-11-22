@@ -1,26 +1,28 @@
-[
-  {
-    "id": 1,
-    "title": "هاتف Redmi Note 12",
-    "price": "22,500 DA",
-    "image": "/products/redmi12.jpg",
-    "description": "هاتف جديد ضمان عام كامل، شاشة AMOLED وبطارية 5000mAh.",
-    "contact": {
-      "name": "يوسف",
-      "phone": "0550123456",
-      "whatsapp": "https://wa.me/213550123456"
+{
+  "products": [
+    {
+      "id": "redmi-12",
+      "title": "Xiaomi Redmi 12",
+      "price": "22000 DA",
+      "image": "/products/xiaomi-redmi-12-1.webp",
+      "description": "هاتف شاومي ريدمي 12، شاشة كبيرة وبطارية قوية، مناسب للاستعمال اليومي.",
+      "seller": {
+        "name": "مصطفى",
+        "phone": "06XXXXXXXX",
+        "telegram": "@misteraidz_bot"
+      }
+    },
+    {
+      "id": "t900-watch",
+      "title": "Smart Watch T900",
+      "price": "6000 DA",
+      "image": "/products/fichier-standard-copie10-1.jpg",
+      "description": "ساعة ذكية T900، مكالمات، إشعارات، وخطواتك كاملة مراقَبة.",
+      "seller": {
+        "name": "مصطفى",
+        "phone": "06XXXXXXXX",
+        "telegram": "@misteraidz_bot"
+      }
     }
-  },
-  {
-    "id": 2,
-    "title": "ساعة ذكية T900 Ultra",
-    "price": "5,000 DA",
-    "image": "/products/t900.jpg",
-    "description": "ساعة مقاومة للماء تعمل بالبلوتوث وفيها GPS قوي.",
-    "contact": {
-      "name": "سامي",
-      "phone": "0798456123",
-      "whatsapp": "https://wa.me/213798456123"
-    }
-  }
-]
+  ]
+}
